@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+h1 {
+color: gold;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color:darkorange
+};
+
+div {
+  background-color: blueviolet;
+  display: flex;
+  height: 10vh;
+  width: 10vh;
+  border: 3vmin solid white;
+  opacity: 0;
+  border-radius: 30%;
+  border: 0.1vmin solid darkslategrey;
+}
+
+#board {
+  border: 3vmin solid white;
+  border-radius: 45%;
+  height: 10vh;
+  width: 10vh;
+  border: 0.25vmin solid darkslategrey;
+}
+
+button {
+  flex-direction: column-reverse;
+  /* align-self: center; */
+  color: orange;
+  background-color: red;
+  opacity: 0.5;
+}
+
+button:hover {
+  color: skyblue;
+  font-weight: bold;
+  background-color: yellow;
+  opacity: 1;
+}
+
+
+
