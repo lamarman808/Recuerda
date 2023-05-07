@@ -8,21 +8,13 @@ color: gold;
 body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  background-color: gold;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  justify-content: center;
   align-items: center;
-  background-color:darkorange
+  background-image: url(https://lumiere-a.akamaihd.net/v1/images/image_57ecff16.jpeg?region=0%2C0%2C640%2C480)  
 };
-
-div {
-  background-color: blueviolet;
-  display: flex;
-  height: 10vh;
-  width: 10vh;
-  border: 3vmin solid white;
-  opacity: 0;
-  border-radius: 30%;
-  border: 0.1vmin solid darkslategrey;
-}
 
 #board {
   border: 3vmin solid white;
@@ -32,9 +24,24 @@ div {
   border: 0.25vmin solid darkslategrey;
 }
 
+div {
+  background-color: blueviolet;
+  display: flex;
+  height: 20vh;
+  width: 20vh;
+  border-radius: 30%;
+  border: 0.25vmin solid orangered;
+  opacity: 0.55;
+
+}
+
+div:hover {
+  border: solid greenyellow
+}
+
 button {
   flex-direction: column-reverse;
-  /* align-self: center; */
+  align-self: center;
   color: orange;
   background-color: red;
   opacity: 0.5;
