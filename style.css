@@ -24,6 +24,7 @@ body {
 .board {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   border: 7vmin solid white;
   border-radius: 45%;
   height: 50vh;
@@ -52,20 +53,21 @@ body {
 /*Initial BG Image */
 
 .front {
-  position: relative;
-  height: 25vh;
-  width: 24vh;
+  position: absolute;
+  height: 24.5vh;
+  width: 24.5vh;
   border-radius: 30%;
+  /* backface-visibility: hidden; */
 }
 
 .back {
-  background-image: url(https://static.wikia.nocookie.net/pixars-coco/images/b/bd/Coco_Headless_Hector.png/revision/latest/scale-to-width-down/1200?cb=20181116224650);
+  background-color: aquamarine;
   position: absolute;
-  height: 25vh;
-  width: 25vh;
+  height: 24.5vh;
+  width: 24.5vh;
   border-radius: 30%;
-  opacity: 0;
   transform: rotateY(180deg);
+  backface-visibility: hidden;
 }
 
 button {

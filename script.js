@@ -26,6 +26,7 @@ const renderBoard = () => {
 }
 
 const cardFlip = () => {
+  cardEl.classList.toggle('front')
   cardEl.classList.toggle('cardBack')
   // while ((frontImg = front.evt.target.style.opacity = 1)) {
   //   backImg = back.style.evt.target.opacity = 0
@@ -33,21 +34,28 @@ const cardFlip = () => {
   // while ((frontImg = front.evt.target.style.opacity = 0)) {
   //   backImg = back.style.evt.target.opacity = 1
   // }
+  checkMatch()
 }
 
 const checkMatch = () => {
   if (cardFlip.target === cardFlip.target) {
-    messageEl.innerHTML = "It's a Match!"
+    messageEl.innerText = "It's a Match!"
   } else if (cardFlip.target !== cardFlip.target) {
-    messageEl.innerHTML = 'No bueno. Una vez mas!'
+    messageEl.innerText = 'No bueno. Una vez mas!'
   }
+  checkMatch()
 }
 
 start() // 1st to finish
 renderBoard() //2nd to finish
-cardFlip() //3rd to finish
-checkMatch() //4th to finish
+// cardFlip() //3rd to finish
+// checkMatch() //4th to finish
+
+/*-----------VICTORY LOGIC!-------------*/
 
 /*----- event listeners -----*/
 document.querySelector('button').addEventListener('click', start)
 cardEl.addEventListener('click', cardFlip)
+
+/*-----------WORKS CITED------------*/
+//
