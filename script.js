@@ -15,7 +15,7 @@ let cardEl = document.getElementById('card-1')
 /*----- functions -----*/
 const start = () => {
   board = document.getElementById('board')
-  board = [0]
+  board = [[0, 0, 0, 0]]
   victory = null
 
   renderBoard()
@@ -43,7 +43,6 @@ const checkMatch = () => {
   } else if (cardFlip.target !== cardFlip.target) {
     messageEl.innerText = 'No bueno. Una vez mas!'
   }
-  checkMatch()
 }
 
 start() // 1st to finish
