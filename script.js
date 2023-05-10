@@ -10,30 +10,25 @@ let backImg = document.querySelector('back')
 
 /*----- cached element references -----*/
 const messageEl = document.querySelector('h1')
-let cardEl = document.getElementById('card-1')
-
+let cardEl = document.querySelectorAll('.card')
 /*----- functions -----*/
 const start = () => {
   board = document.getElementById('board')
-  board = [[0, 0, 0, 0]]
+  board = [[null, null, null, null]]
   victory = null
 
-  renderBoard()
+  // renderBoard()
 }
 
-const renderBoard = () => {
-  board.forEach(function () {})
-}
+// const renderBoard = () => {
+//   board.forEach(function () {})
+// }
 
-const cardFlip = () => {
-  cardEl.classList.toggle('front')
-  cardEl.classList.toggle('cardBack')
-  // while ((frontImg = front.evt.target.style.opacity = 1)) {
-  //   backImg = back.style.evt.target.opacity = 0
-  // }
-  // while ((frontImg = front.evt.target.style.opacity = 0)) {
-  //   backImg = back.style.evt.target.opacity = 1
-  // }
+const cardFlip = (idx) => {
+  console.log('CARD FLIP!')
+  // cardEl.style.transform = rotateY(180deg)
+  // cardEl.classList.remove('front')
+  cardEl[idx].classList.add('cardBack')
   checkMatch()
 }
 
@@ -46,15 +41,24 @@ const checkMatch = () => {
 }
 
 start() // 1st to finish
-renderBoard() //2nd to finish
+// renderBoard() //2nd to finish
 // cardFlip() //3rd to finish
 // checkMatch() //4th to finish
 
 /*-----------VICTORY LOGIC!-------------*/
-
+console.log(cardEl)
 /*----- event listeners -----*/
+cardEl.forEach((el, index) => {
+  el.addEventListener('click', () => {
+    cardFlip(index)
+  })
+})
 document.querySelector('button').addEventListener('click', start)
-cardEl.addEventListener('click', cardFlip)
+
+// cardOne.addEventListener('click', cardFlip)
+// cardTwo.addEventListener('click', cardFlip)
+// cardThree.addEventListener('click', cardFlip)
+// cardFour.addEventListener('click', cardFlip)
 
 /*-----------WORKS CITED------------*/
 //

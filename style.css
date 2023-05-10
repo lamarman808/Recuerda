@@ -21,7 +21,6 @@ body {
 
 /* --------------BUTTON(S)------------- */
 button {
-  flex-direction: column-reverse;
   align-self: center;
   color: orange;
   background-color: red;
