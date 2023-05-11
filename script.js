@@ -1,10 +1,17 @@
 /*----- constants -----*/
 const cocoPics = {
-  c1: { img: 'COCO_PICS/cocoypaco.png', matches: 'c2' },
-  c2: { img: 'COCO_PICS/headlesshector.png', matches: 'c2' },
-  c3: { img: 'COCO_PICS/pacoplays.png', matches: 'c3' },
-  c4: { img: 'COCO_PICS/pacopose.png', matches: 'c4' }
-  // c5: { img: 'imgs/skullmami.png', matches: 'c5' },
+  c1: { img: 'COCO_PICS/cocoypaco.png', matches: 'c7' },
+  c2: { img: 'COCO_PICS/headlesshector.png', matches: 'c8' },
+  c3: { img: 'COCO_PICS/pacoplays.png', matches: 'c9' },
+  c4: { img: 'COCO_PICS/pacopose.png', matches: 'c10' },
+  c5: { img: 'COCO_PICS/skullmami.png', matches: 'c11' },
+  c6: { img: 'COCO_PICS/pacoyhector.png', matches: 'c12' },
+  c7: { img: 'COCO_PICS/cocoypaco.png', matches: 'c1' },
+  c8: { img: 'COCO_PICS/headlesshector.png', matches: 'c2' },
+  c9: { img: 'COCO_PICS/pacoplays.png', matches: 'c3' },
+  c10: { img: 'COCO_PICSs/pacopose.png', matches: 'c4' },
+  c11: { img: 'COCO_PICSs/skullmami.png', matches: 'c5' },
+  c12: { img: 'COCO_PICSs/pacoyhector.png', matches: 'c6' }
 }
 
 console.log(cocoPics)

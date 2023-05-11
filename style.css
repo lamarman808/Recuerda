@@ -12,8 +12,8 @@ body {
   background-color: gold;
   background-repeat: no-repeat;
   background-size: 100%;
-  height: 100vh;
-  width: 100vh;
+  height: 200vh;
+  width: 200vh;
   justify-content: center;
   align-items: center;
   background-image: url(https://lumiere-a.akamaihd.net/v1/images/image_57ecff16.jpeg?region=0%2C0%2C640%2C480)
@@ -110,7 +110,7 @@ button:hover {
 
 .back {
   background-size: auto;
-  background-color: aquamarine;
+  background-color: red orangered;
   position: absolute;
   height: 24.5vh;
   width: 24.5vh;
