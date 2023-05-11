@@ -1,24 +1,7 @@
-/*----- constants -----*/
-const cocoPics = {
-  c1: { img: 'COCO_PICS/cocoypaco.png', matches: 'c7' },
-  c2: { img: 'COCO_PICS/headlesshector.png', matches: 'c8' },
-  c3: { img: 'COCO_PICS/pacoplays.png', matches: 'c9' },
-  c4: { img: 'COCO_PICS/pacopose.png', matches: 'c10' },
-  c5: { img: 'COCO_PICS/skullmami.png', matches: 'c11' },
-  c6: { img: 'COCO_PICS/pacoyhector.png', matches: 'c12' },
-  c7: { img: 'COCO_PICS/cocoypaco.png', matches: 'c1' },
-  c8: { img: 'COCO_PICS/headlesshector.png', matches: 'c2' },
-  c9: { img: 'COCO_PICS/pacoplays.png', matches: 'c3' },
-  c10: { img: 'COCO_PICSs/pacopose.png', matches: 'c4' },
-  c11: { img: 'COCO_PICSs/skullmami.png', matches: 'c5' },
-  c12: { img: 'COCO_PICSs/pacoyhector.png', matches: 'c6' }
-}
-
-console.log(cocoPics)
-
-/*----- app's state (variables) -----*/
-let board // Where all the cards appear to be acted upon
-let victory //When all cards are matched, the player wins!
+/*----- App's State (variables) -----*/
+let board
+let matches = 0
+let clicks = 1
 
 /*-------CARD FACES------------*/
 // let frontImg = document.querySelector('front')
@@ -27,46 +10,56 @@ let backImg = document.querySelector('back')
 /*----- cached element references -----*/
 const messageEl = document.querySelector('h1')
 let cardEl = document.querySelectorAll('.card')
+let firstImg
+let secondImg
+let firstSrc
+let secondSrc
 /*----- functions -----*/
 const start = () => {
-  board = document.getElementById('board')
-  board = [[null, null, null, null]]
-  victory = null
-
-  // renderBoard()
+  clicks = 1
+  matches = 0
+  cardFlip()
 }
-
-// const renderBoard = () => {
-//   board.forEach(function () {})
-// }
 
 const cardFlip = (idx) => {
-  // cardEl.style.transform = rotateY(180deg)
-  // cardEl.classList.remove('front')
-  cardEl[idx].classList.toggle('cardBack')
-  checkMatch()
-}
-
-start() // 1st to finish
-// renderBoard() //2nd to finish
-
-/*-----------VICTORY LOGIC!-------------*/
-const checkMatch = () => {
-  //   if (cardFlip.target === cardFlip.target) {
-  //     messageEl.innerText = "It's a Match!"
-  //   } else if (cardFlip.target !== cardFlip.target) {
-  //     messageEl.innerText = 'No bueno. Una vez mas!'
-  //   }
-  // }
-  if (cardFlip.target === cardFlip.target) {
-    messageEl.innerText = "It's a Match!"
-  } else if (cardFlip.target !== cardFlip.target) {
-    messageEl.innerText = 'No bueno. Una vez mas!'
+  if (clicks === 1) {
+    cardEl[idx].classList.toggle('cardBack')
+    firstImg = document.querySelector(`#card-${idx} > img`)
+    firstSrc = firstImg.src.slice(32, 34)
+    clicks++
+    // console.log(clicks)
+  } else if (clicks === 2) {
+    cardEl[idx].classList.toggle('cardBack')
+    secondImg = document.querySelector(`#card-${idx} > img`)
+    secondSrc = secondImg.src.slice(32, 34)
+    clicks--
+    if (firstSrc === secondSrc) {
+      messageEl.innerText = "It's a Match!"
+      matches++
+      if (matches === 6) {
+        messageEl.innerText = 'GANADOR!'
+      }
+    } else if (firstSrc !== secondSrc) {
+      messageEl.innerText = 'No bueno. Una vez mas!'
+    }
+    // console.log(clicks)
   }
 }
 
+// start() // 1st to finish
+// renderBoard() //2nd to finish
+
+/*-----------WIN LOGIC!-------------*/
+// const checkMatch = () => {
+//   if (cardFlip.target === cardFlip.target) {
+//     messageEl.innerText = "It's a Match!"
+//   } else if (cardFlip.target !== cardFlip.target) {
+//     messageEl.innerText = 'No bueno. Una vez mas!'
+//   }
+// }
+
 /*----- event listeners -----*/
-// For Loop Required to iterate through the Array of CARD ELEMENTS to select which in the Index receives the CLICK event!
+// For Loop thar iterates through the Array of CARD ELEMENTS to select which in the Index receives the CLICK event!
 cardEl.forEach((el, index) => {
   el.addEventListener('click', () => {
     cardFlip(index)
