@@ -36,27 +36,27 @@ const cardFlip = (idx) => {
     if (firstSrc === secondSrc) {
       messageEl.innerText = "It's a Match!"
       matches++
+      clicks = 1
       if (matches === 6) {
         messageEl.innerText = 'GANADOR!'
+        clicks = 1
       }
     } else if (firstSrc !== secondSrc) {
       messageEl.innerText = 'No bueno. Una vez mas!'
+      clicks = 1
+      cardFlip()
     }
-    // console.log(clicks)
   }
 }
 
-// start() // 1st to finish
-// renderBoard() //2nd to finish
+/*---------------NO EXTRA CLICKS!--------------*/
+const stopClick = () => {
+  if (clicks === 2) {
+    el.removeEventListener('click', cardFlip())
+  }
+}
 
 /*-----------WIN LOGIC!-------------*/
-// const checkMatch = () => {
-//   if (cardFlip.target === cardFlip.target) {
-//     messageEl.innerText = "It's a Match!"
-//   } else if (cardFlip.target !== cardFlip.target) {
-//     messageEl.innerText = 'No bueno. Una vez mas!'
-//   }
-// }
 
 /*----- event listeners -----*/
 // For Loop thar iterates through the Array of CARD ELEMENTS to select which in the Index receives the CLICK event!
@@ -66,6 +66,3 @@ cardEl.forEach((el, index) => {
   })
 })
 document.querySelector('button').addEventListener('click', start)
-
-/*-----------WORKS CITED------------*/
-//

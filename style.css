@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-/* --------------MESSAGE EL------------ */
+/* --------------MESSAGE EL.------------ */
 h1 {
   display: flex;
   justify-content: center;
@@ -23,7 +23,7 @@ body {
   background-image: url(https://lumiere-a.akamaihd.net/v1/images/image_57ecff16.jpeg?region=0%2C0%2C640%2C480)
 }
 
-/* --------------BUTTON(S)------------- */
+/* --------------BUTTON------------- */
 section {
   display: flex;
   align-items: center;
@@ -52,7 +52,6 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   border-radius: 45%;
-  /* border: 0.25vmin solid darkslategrey; */
 }
 
 #card-0, #card-1, #card-2, #card-3, #card-4, #card-5, #card-6, #card-7, #card-8, #card-9, #card-10, #card-11 {
@@ -62,40 +61,7 @@ button:hover {
   border: 0.25vmin solid orangered;
   transform-style: preserve-3d
 }
-#card-0:hover {
-  border: solid greenyellow
-}
-#card-2:hover {
-  border: solid greenyellow
-}
-#card-3:hover {
-  border: solid greenyellow
-}
-#card-4:hover {
-  border: solid greenyellow
-}
-#card-5:hover {
-  border: solid greenyellow
-}
-#card-6:hover {
-  border: solid greenyellow
-}
-#card-7:hover {
-  border: solid greenyellow
-}
-#card-8:hover {
-  border: solid greenyellow
-}
-#card-9:hover {
-  border: solid greenyellow
-}
-#card-10:hover {
-  border: solid greenyellow
-}
-#card-11:hover {
-  border: solid greenyellow
-}
-#card-1:hover {
+#card-0:hover, #card-1:hover, #card-2:hover, #card-3:hover, #card-4:hover, #card-5:hover, #card-6:hover, #card-7:hover, #card-8:hover, #card-9:hover, #card-10:hover, #card-11:hover {
   border: solid greenyellow
 }
 
@@ -108,7 +74,7 @@ button:hover {
   height: 24.5vh;
   width: 24.5vh;
   border-radius: 30%;
-  opacity: 0.70;
+  opacity: 0.65;
 }
 
 .back {
