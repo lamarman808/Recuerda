@@ -4,7 +4,9 @@
 
 /* --------------MESSAGE EL------------ */
 h1 {
-  position: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: gold;
 }
 
@@ -22,8 +24,12 @@ body {
 }
 
 /* --------------BUTTON(S)------------- */
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 button {
-  align-self: center;
   color: orange;
   background-color: red;
   opacity: 0.75;
