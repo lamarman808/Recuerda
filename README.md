@@ -14,8 +14,8 @@ The Age-Old Beloved game of Memory!
 ***
 - It's the old fam favorite, Memory- now in technicolor and in the theme of the best Disney & Pixar collaboration we've experienced so far!
 - The player will be able to click cards one at a time, flipping them to reveal an image as we all know the game to work.
-  - The RESET/PLAY Button both restarts AND the game AND shuffles the cards/images!
-  - More levels/difficulties = more cards!
+  - The RESET/PLAY Button both restarts the game, resetting the card images!
+  - 2 Pages = more cards!
 1. The game is won if the player can guess, remember, amd match all the pairs of cards.
 
 
