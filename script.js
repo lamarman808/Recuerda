@@ -1,10 +1,9 @@
 /*----- App's State (variables) -----*/
-let board
 let matches = 0
 let clicks = 1
 
 /*-------CARD FACES------------*/
-// let frontImg = document.querySelector('front')
+let frontImg = document.querySelector('front')
 let backImg = document.querySelector('back')
 
 /*----- cached element references -----*/
@@ -14,20 +13,23 @@ let firstImg
 let secondImg
 let firstSrc
 let secondSrc
+let firstFlip
 /*----- functions -----*/
 const start = () => {
+  let random = Math.floor(Math.random() * 12)
+  cardEl.style.order = random
   clicks = 1
   matches = 0
-  cardFlip()
+  cardFlip(cardEl[idx])
 }
 
 const cardFlip = (idx) => {
   if (clicks === 1) {
-    cardEl[idx].classList.toggle('cardBack')
+    firstFlip = cardEl[idx]
+    firstFlip.classList.toggle('cardBack')
     firstImg = document.querySelector(`#card-${idx} > img`)
     firstSrc = firstImg.src.slice(32, 34)
     clicks++
-    // console.log(clicks)
   } else if (clicks === 2) {
     cardEl[idx].classList.toggle('cardBack')
     secondImg = document.querySelector(`#card-${idx} > img`)
@@ -35,16 +37,27 @@ const cardFlip = (idx) => {
     clicks--
     if (firstSrc === secondSrc) {
       messageEl.innerText = "It's a Match!"
+      setTimeout(() => {
+        messageEl.innerText = 'Recordar es Entender!'
+      }, 3000)
+      stopClick()
       matches++
       clicks = 1
+
+      /*-----------WIN LOGIC!-------------*/
       if (matches === 6) {
         messageEl.innerText = 'GANADOR!'
+        stopClick()
         clicks = 1
       }
     } else if (firstSrc !== secondSrc) {
       messageEl.innerText = 'No bueno. Una vez mas!'
-      clicks = 1
-      cardFlip()
+      setTimeout(() => {
+        firstFlip.classList.toggle('cardBack')
+        cardEl[idx].classList.toggle('cardBack')
+        clicks = 1
+        messageEl.innerText = 'Recordar es Entender!'
+      }, 2000)
     }
   }
 }
@@ -52,11 +65,10 @@ const cardFlip = (idx) => {
 /*---------------NO EXTRA CLICKS!--------------*/
 const stopClick = () => {
   if (clicks === 2) {
-    el.removeEventListener('click', cardFlip())
+    firstSrc.removeEventListener('click', cardFlip)
+    secondSrc.removeEventListener('click', cardFlip)
   }
 }
-
-/*-----------WIN LOGIC!-------------*/
 
 /*----- event listeners -----*/
 // For Loop thar iterates through the Array of CARD ELEMENTS to select which in the Index receives the CLICK event!

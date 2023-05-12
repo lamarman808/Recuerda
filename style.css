@@ -51,6 +51,7 @@ button:hover {
   position: center;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   border-radius: 45%;
 }
 
