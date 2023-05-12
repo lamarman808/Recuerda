@@ -22,6 +22,19 @@ h1 {
   background-position: fixed;
   background-image: url(https://lumiere-a.akamaihd.net/v1/images/image_57ecff16.jpeg?region=0%2C0%2C640%2C480)
 }
+/*----Game Board (Juedo de Mesa)----*/
+#cover {
+  background-color: gold;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 120vh;
+  width: 130vh;
+  display: grid;
+  grid-area:unset;
+  background-position: fixed;
+  background-size: cover;
+  background-image: url(https://cdn.dribbble.com/users/1099127/screenshots/3956888/dribbble.gif)
+}
 
 /* --------------BUTTON------------- */
 section {
@@ -42,7 +55,7 @@ button:hover {
   opacity: 1;
 }
 
-/* --------SECTION: Card Containers------ */
+/* --------Board: Card Containers------ */
 
 #board {
   margin: 48px auto;
@@ -54,6 +67,7 @@ button:hover {
   justify-content: space-around;
   border-radius: 45%;
 }
+
 
 #card-0, #card-1, #card-2, #card-3, #card-4, #card-5, #card-6, #card-7, #card-8, #card-9, #card-10, #card-11 {
   height: 25vh;
@@ -91,4 +105,16 @@ button:hover {
 
 .cardBack {
   transform: rotateY(180deg);
+}
+
+/*-----Shared HTML-----*/
+audio {
+  opacity: 0.10;
+}
+a {
+  font-weight: bold;
+  color: gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
