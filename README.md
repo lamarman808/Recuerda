@@ -24,8 +24,6 @@ The Age-Old Beloved game of Memory!
 1. HTML
 2. CSS
 3. Javascript
-4. Mac OS
-5. VSCODE
 
 ### Getting Started
 If you've never played this game nor anything of the like before, I encourage you to dive in and have a ball! 
@@ -34,11 +32,14 @@ If you've never played this game nor anything of the like before, I encourage yo
 ![](https://media.tenor.com/PCMXl5S8XkIAAAAM/calaca-sentada.gif)
 
 ### Future Updates
-- [ ] MVP Reached?
-- [ ] Rules/Starting Page
-- [ ] Levels/different words &/ Phrases
+- [X] MVP Reached?
+- [X] Rules/Starting Page
+- [X] Levels/different Pages
 
 
 # **Credits**
+Disney & Pixar's Coco
+**No images, songs, nor characters represented in this game are claimed as my own and are direct properties of the Disney & Pixar teams respectively. All represented is done so for academia and no personal gain otherwise!!**
 
-![Credits](https://knowyourmeme.com/memes/chance-the-rapper-bet-awards-reaction)
+![Link] (https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+![Link] (https://css-tricks.com/snippets/css/complete-guide-grid/)
